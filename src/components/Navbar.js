@@ -19,11 +19,11 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Skills', path: '/skills' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Home', path: '#/' },
+    { name: 'Projects', path: '#/projects' },
+    { name: 'Skills', path: '#/skills' },
+    { name: 'About', path: '#/about' },
+    { name: 'Contact', path: '#/contact' }
   ];
 
   const navbarStyle = {
