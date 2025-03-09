@@ -746,7 +746,7 @@ const Home = () => {
             <p style={styles.ctaText}>Ready to build amazing web and mobile experiences? Check out my projects or get in touch!</p>
             <div style={styles.ctaButtons}>
               <motion.a 
-                href="/projects" 
+                href="#/projects" 
                 style={styles.ctaButton}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -754,7 +754,7 @@ const Home = () => {
                 See Projects
               </motion.a>
               <motion.a 
-                href="/contact" 
+                href="#/contact" 
                 style={{...styles.ctaButton, ...styles.ctaButtonPrimary}}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
