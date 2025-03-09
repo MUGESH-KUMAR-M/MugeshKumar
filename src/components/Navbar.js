@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,8 +15,20 @@ const Navbar = () => {
       }
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Set initial value
+    handleResize();
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const navItems = [
@@ -56,30 +69,29 @@ const Navbar = () => {
     letterSpacing: '1px',
   };
 
+  const hamburgerStyle = {
+    display: isMobile ? 'block' : 'none',
+    cursor: 'pointer',
+  };
+
   const navLinksStyle = {
-    display: 'flex',
+    display: isMobile ? (menuOpen ? 'flex' : 'none') : 'flex',
     listStyle: 'none',
     margin: 0,
     padding: 0,
-    transition: 'all 0.3s ease',
-    '@media (max-width: 768px)': {
-      display: menuOpen ? 'flex' : 'none',
-      flexDirection: 'column',
-      position: 'absolute',
-      top: '100%',
-      right: 0,
-      backgroundColor: 'rgba(18, 18, 18, 0.95)',
-      width: '100%',
-      padding: '1rem 0',
-      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-    },
+    flexDirection: isMobile ? 'column' : 'row',
+    position: isMobile ? 'absolute' : 'static',
+    top: isMobile ? '100%' : 'auto',
+    right: 0,
+    backgroundColor: isMobile ? 'rgba(18, 18, 18, 0.95)' : 'transparent',
+    width: isMobile ? '100%' : 'auto',
+    padding: isMobile ? '1rem 0' : 0,
+    boxShadow: isMobile ? '0 4px 12px rgba(0, 0, 0, 0.1)' : 'none',
+    textAlign: isMobile ? 'center' : 'left',
   };
 
   const navItemStyle = {
-    margin: '0 1rem',
-    '@media (max-width: 768px)': {
-      margin: '0.5rem 0',
-    },
+    margin: isMobile ? '0.5rem 0' : '0 1rem',
   };
 
   const navLinkStyle = {
@@ -89,35 +101,8 @@ const Navbar = () => {
     fontWeight: 500,
     padding: '0.5rem',
     transition: 'color 0.3s ease',
-    ':hover': {
-      color: '#64ffda',
-    },
+    display: 'block',
   };
-
-  const hamburgerStyle = {
-    display: 'none',
-    cursor: 'pointer',
-    '@media (max-width: 768px)': {
-      display: 'block',
-    },
-  };
-
-  // For responsive menu
-  const mobileNavLinksStyle = {
-    ...navLinksStyle,
-    display: menuOpen ? 'flex' : 'none',
-    flexDirection: 'column',
-    position: 'absolute',
-    top: '100%',
-    right: 0,
-    backgroundColor: 'rgba(18, 18, 18, 0.95)',
-    width: '100%',
-    padding: '1rem 0',
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-  };
-
-  // Inline media query handling since we're using inline styles
-  const isMobile = window.innerWidth <= 768;
 
   return (
     <nav style={navbarStyle}>
@@ -137,7 +122,7 @@ const Navbar = () => {
         </div>
 
         {/* Navigation links */}
-        <ul style={isMobile ? mobileNavLinksStyle : navLinksStyle}>
+        <ul style={navLinksStyle}>
           {navItems.map((item, index) => (
             <motion.li 
               key={index} 
@@ -150,6 +135,7 @@ const Navbar = () => {
                 style={navLinkStyle}
                 onMouseOver={(e) => e.target.style.color = '#64ffda'}
                 onMouseOut={(e) => e.target.style.color = '#ffffff'}
+                onClick={() => isMobile && setMenuOpen(false)}
               >
                 {item.name}
               </a>
