@@ -1,0 +1,326 @@
+/* RollingGallery.css */
+.gallery-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    perspective: 1200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    padding: 0 30px;
+  }
+  
+  .gallery-content {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+  }
+  
+  .gallery-track {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    cursor: grab;
+    will-change: transform;
+  }
+  
+  .gallery-track:active {
+    cursor: grabbing;
+  }
+  
+  .gallery-item {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    transition: transform 0.2s ease-out;
+    will-change: transform;
+  }
+  
+  .gallery-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 50%;
+    padding: 12px;
+    background-color: rgba(10, 25, 47, 0.8);
+    border: 3px solid;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 8px rgba(100, 255, 218, 0.2);
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  
+  .gallery-item:hover .gallery-img {
+    transform: scale(1.1) translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(100, 255, 218, 0.5);
+    filter: brightness(1.2);
+  }
+  
+  .gallery-gradient {
+    position: absolute;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+  
+  .gallery-gradient-left {
+    left: 0;
+    background: linear-gradient(to right, #0a192f 0%, rgba(10, 25, 47, 0) 100%);
+  }
+  
+  .gallery-gradient-right {
+    right: 0;
+    background: linear-gradient(to left, #0a192f 0%, rgba(10, 25, 47, 0) 100%);
+  }
+  
+  /* Skill Card Styles */
+  .skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(17, 34, 64, 0.8);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+  }
+  
+  .skill-card:hover {
+    background-color: rgba(17, 34, 64, 0.95);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(100, 255, 218, 0.2);
+    border-color: rgba(100, 255, 218, 0.3);
+  }
+  
+  .skill-info {
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .skill-info h3 {
+    color: #e6f1ff;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  .skill-bar {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .skill-level {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  }
+  
+  /* Enhancing performance with GPU acceleration */
+  .gallery-container,
+  .gallery-track,
+  .gallery-item,
+  .skill-card {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .gallery-container {
+      height: 250px;
+    }
+    
+    .gallery-img {
+      width: 70px;
+      height: 70px;
+    }
+    
+    .skill-info h3 {
+      font-size: 16px;
+    }
+    
+    .gallery-content {
+      width: 90%;
+    }
+    
+    .skill-card {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery-container {
+      height: 220px;
+      padding: 0 15px;
+    }
+    
+    .gallery-img {
+      width: 60px;
+      height: 60px;
+      padding: 8px;
+    }
+    
+    .gallery-content {
+      width: 95%;
+    }
+    
+    .skill-card {
+      padding: 12px;
+    }
+    
+    .skill-info h3 {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    
+    .skill-bar {
+      height: 6px;
+    }
+    
+    .gallery-gradient {
+      width: 25%;
+    }
+  }
+  
+  /* Animation for skill level bars */
+  @keyframes fillBar {
+    from {
+      width: 0;
+    }
+    to {
+      width: var(--skill-percent);
+    }
+  }
+  
+  .skill-level {
+    width: 0;
+    animation: fillBar 1.5s ease-out forwards;
+    animation-delay: 0.3s;
+  }
+  
+  /* Color themes for different skills */
+  .skill-level.programming {
+    background-color: #64ffda;
+  }
+  
+  .skill-level.design {
+    background-color: #ff64ab;
+  }
+  
+  .skill-level.frameworks {
+    background-color: #64abff;
+  }
+  
+  .skill-level.tools {
+    background-color: #ffb764;
+  }
+  
+  /* Additional hover effects */
+  .gallery-content:hover .gallery-track {
+    animation-play-state: paused;
+  }
+  
+  /* Tooltip for skill details */
+  .skill-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background-color: rgba(10, 25, 47, 0.95);
+    color: #e6f1ff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+    width: max-content;
+    max-width: 250px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+  }
+  
+  .skill-card:hover .skill-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+  }
+  
+  .skill-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgba(10, 25, 47, 0.95) transparent transparent transparent;
+  }
+  
+  /* Navigation buttons */
+  .gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(100, 255, 218, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+  }
+  
+  .gallery-nav:hover {
+    background-color: rgba(100, 255, 218, 0.2);
+    transform: translateY(-50%) scale(1.1);
+  }
+  
+  .gallery-nav-prev {
+    left: 20px;
+  }
+  
+  .gallery-nav-next {
+    right: 20px;
+  }
+  
+  .gallery-nav-icon {
+    width: 20px;
+    height: 20px;
+    fill: #64ffda;
+  }
