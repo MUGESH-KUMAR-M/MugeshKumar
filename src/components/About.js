@@ -1,5 +1,8 @@
 import React from 'react';
 import PixelCard from './PixelCard';
+import project1Img from '../images/project1.jpg';
+import project2Img from '../images/project2.jpg';
+import project3Img from '../images/project3.jpg';
 
 const About = () => {
   // Main container styles
@@ -210,27 +213,27 @@ const About = () => {
       title: 'E-Commerce Platform',
       description: 'A full-stack e-commerce application with product listings, cart functionality, user authentication, and payment processing.',
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      image: '/project1.jpg',
+      image: project1Img,
       link: '#'
     },
     {
       title: 'Health & Fitness App',
       description: 'A mobile application for tracking fitness goals, workout routines, and nutrition with personalized recommendations.',
       technologies: ['React Native', 'Expo', 'Firebase', 'Chart.js'],
-      image: '/project2.jpg',
+      image: project2Img,
       link: '#'
     },
     {
       title: 'AI-Powered Task Manager',
       description: 'A productivity tool that uses AI to help prioritize tasks, suggest optimal work times, and improve workflow efficiency.',
       technologies: ['React', 'Python', 'TensorFlow', 'Express'],
-      image: '/project3.jpg',
+      image: project3Img,
       link: '#'
     }
   ];
 
   // Create fake image src for the project placeholders
-  const getPlaceholderSrc = (index) => `/api/placeholder/600/300?text=Project+${index + 1}`;
+  // const getPlaceholderSrc = (index) => `/api/placeholder/600/300?text=Project+${index + 1}`;
 
   return (
     <div style={pageContainerStyle}>
@@ -317,7 +320,7 @@ const About = () => {
           {projects.map((project, index) => (
             <div key={index} style={{...projectCardStyle, ...projectCardHoverStyle}}>
               <img 
-                src={getPlaceholderSrc(index)} 
+                src={project.image} 
                 alt={project.title} 
                 style={projectImageStyle} 
               />

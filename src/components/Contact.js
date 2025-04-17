@@ -180,7 +180,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 style={{marginBottom: '0.25rem', fontSize: '1rem'}}>Email</h3>
-                <p style={{color: '#fda4af'}}>mugeshkumar@example.com</p>
+                <p style={{color: '#fda4af'}}>mugeshkumar971@gmail.com</p>
               </div>
             </div>
             
@@ -200,23 +200,20 @@ const Contact = () => {
               </div>
               <div>
                 <h3 style={{marginBottom: '0.25rem', fontSize: '1rem'}}>Phone</h3>
-                <p style={{color: '#fda4af'}}>+91 98765 43210</p>
+                <p style={{color: '#fda4af'}}>+91 6385329845</p>
               </div>
             </div>
             
             <div style={{marginTop: '2rem'}}>
               <h3 style={{marginBottom: '1rem', fontSize: '1.25rem'}}>Follow Me</h3>
               <div style={{display: 'flex', gap: '1rem'}}>
-                <a href="https://github.com/mugeshkumar" style={socialIconStyle} aria-label="GitHub">
+                <a href="https://github.com/Mugeshkumar-2005" style={socialIconStyle} aria-label="GitHub">
                   <FaGithub />
                 </a>
-                <a href="https://linkedin.com/in/mugeshkumar" style={socialIconStyle} aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/mugesh-kumar-5b5591290/" style={socialIconStyle} aria-label="LinkedIn">
                   <FaLinkedin />
                 </a>
-                <a href="https://twitter.com/mugeshkumar" style={socialIconStyle} aria-label="Twitter">
-                  <FaTwitter />
-                </a>
-                <a href="https://instagram.com/mugeshkumar" style={socialIconStyle} aria-label="Instagram">
+                <a href="https://www.instagram.com/its_mugesh27/" style={socialIconStyle} aria-label="Instagram">
                   <FaInstagram />
                 </a>
               </div>

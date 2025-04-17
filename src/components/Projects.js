@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import CollegeImage from '../images/college.png';
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(null);
@@ -11,8 +12,8 @@ const Projects = () => {
       title: 'DR.AI',
       type: 'Hackathon Project',
       description: 'An AI-powered healthcare assistant that uses machine learning to assist with diagnosis and patient care. Built during a hackathon, this project integrates advanced AI algorithms to analyze medical data.',
-      tech: ['Python', 'TensorFlow', 'Flask', 'React', 'AWS'],
-      image: '/images/drai-project.jpg',
+      tech: ['Python', 'Flask', 'React','Fast API'],
+      image: 'https://neurosciencenews.com/files/2023/06/chatgpt-doctor-neurosceuncee.jpg',
       link: 'https://github.com/yourusername/drai-project'
     },
     {
@@ -20,8 +21,8 @@ const Projects = () => {
       title: 'Jarvis AI',
       type: 'Personal Assistant',
       description: 'A voice-activated AI assistant inspired by Iron Man\'s JARVIS. This Python-based system can perform various tasks through voice commands, including web searches, controlling smart home devices, and scheduling.',
-      tech: ['Python', 'Speech Recognition', 'NLP', 'IoT Integration'],
-      image: '/images/jarvis-project.jpg',
+      tech: ['Python', 'Speech Recognition', 'NLP'],
+      image: 'https://wallpapercave.com/wp/wp12646619.jpg',
       link: 'https://github.com/yourusername/jarvis-ai'
     },
     {
@@ -30,7 +31,7 @@ const Projects = () => {
       type: 'Mobile App',
       description: 'A comprehensive mobile application for college students built with React Native and Expo. Features include class schedules, campus maps, event notifications, and integration with college services.',
       tech: ['React Native', 'Expo', 'Firebase', 'Node.js'],
-      image: '/images/college-app.jpg',
+      image: CollegeImage,
       link: 'https://github.com/yourusername/college-companion'
     },
     {
@@ -38,8 +39,8 @@ const Projects = () => {
       title: 'Emotion Detection System',
       type: 'Computer Vision Project',
       description: 'A facial recognition system that can detect and analyze emotions in real-time. Uses Python and OpenCV for face detection and a custom-trained model to recognize seven basic emotional states.',
-      tech: ['Python', 'OpenCV', 'TensorFlow', 'Keras', 'Deep Learning'],
-      image: '/images/emotion-detection.jpg',
+      tech: ['Python', 'OpenCV', 'Deep Learning'],
+      image: 'https://img.freepik.com/free-vector/emotion-detection-abstract-concept-illustration-speech-emotional-state-recognition-emotion-detection-from-text-sensor-technology-machine-learning-ai-reading-face_335657-268.jpg?w=1380&t=st=1649122468~exp=1649123068~hmac=27298c2924753eaca47f3265a32f7c4e0aa6721f20f4f7e92595c7469377aca9',
       link: 'https://github.com/yourusername/emotion-detection'
     }
   ];
