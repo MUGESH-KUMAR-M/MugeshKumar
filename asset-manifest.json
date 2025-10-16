@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/MugeshKumar/static/css/main.2ac508c5.css",
-    "main.js": "/MugeshKumar/static/js/main.c74cb319.js",
-    "static/js/453.235e154e.chunk.js": "/MugeshKumar/static/js/453.235e154e.chunk.js",
-    "static/media/project1.jpg": "/MugeshKumar/static/media/project1.3b76483d3a0e20549635.jpg",
-    "static/media/college.png": "/MugeshKumar/static/media/college.d0de3b1db174ddcccc28.png",
-    "static/media/project2.jpg": "/MugeshKumar/static/media/project2.6322dbe6cedf6095dd20.jpg",
-    "static/media/project3.jpg": "/MugeshKumar/static/media/project3.3162cc9efc76b7d90426.jpg",
-    "index.html": "/MugeshKumar/index.html",
-    "main.2ac508c5.css.map": "/MugeshKumar/static/css/main.2ac508c5.css.map",
-    "main.c74cb319.js.map": "/MugeshKumar/static/js/main.c74cb319.js.map",
-    "453.235e154e.chunk.js.map": "/MugeshKumar/static/js/453.235e154e.chunk.js.map"
+    "main.css": "/static/css/main.2ac508c5.css",
+    "main.js": "/static/js/main.e3628fbe.js",
+    "static/js/453.235e154e.chunk.js": "/static/js/453.235e154e.chunk.js",
+    "static/media/project1.jpg": "/static/media/project1.3b76483d3a0e20549635.jpg",
+    "static/media/college.png": "/static/media/college.d0de3b1db174ddcccc28.png",
+    "static/media/project2.jpg": "/static/media/project2.6322dbe6cedf6095dd20.jpg",
+    "static/media/project3.jpg": "/static/media/project3.3162cc9efc76b7d90426.jpg",
+    "index.html": "/index.html",
+    "main.2ac508c5.css.map": "/static/css/main.2ac508c5.css.map",
+    "main.e3628fbe.js.map": "/static/js/main.e3628fbe.js.map",
+    "453.235e154e.chunk.js.map": "/static/js/453.235e154e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2ac508c5.css",
-    "static/js/main.c74cb319.js"
+    "static/js/main.e3628fbe.js"
   ]
 }
