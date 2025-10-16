@@ -2,7 +2,7 @@
   "name": "protfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mugeshkumar-2005.github.io/MugeshKumar",
+  "homepage": "https://mugeshkumar.me",
   "dependencies": {
     "@react-spring/web": "^9.7.5",
     "@react-three/drei": "^10.0.4",
